@@ -590,96 +590,98 @@
 </section>
 
    
-            <!-- ======= Sección Contacto Mejorada ======= -->
-<section id="contacto" class="py-5 bg-light">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 text-center" data-aos="fade-down">
-                <h2 class="mb-4">¿Listo para transformar tu negocio?</h2>
-                <p class="lead mb-5">Déjanos tus datos y en <span class="text-primary fw-bold">24 horas</span> te enviaremos una propuesta personalizada <u>sin costo</u>.</p>
-            </div>
-        </div>
-        
-        <div class="row justify-content-center">
-            <div class="col-lg-6" data-aos="zoom-in">
-                <div class="contact-card p-4 p-md-5 shadow-lg rounded-4">
-                    <form id="contactForm" action="./contacto.php" method="POST" class="needs-validation" novalidate>
-                        <!-- Campo Nombre -->
-                        <div class="mb-4">
-                            <label for="nombre" class="form-label fw-bold">Nombre completo *</label>
-                            <div class="input-group">
-                                <span class="input-group-text bg-primary text-white"><i class="bi bi-person"></i></span>
-                                <input type="text" class="form-control py-2" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
-                                <div class="invalid-feedback">Por favor ingresa tu nombre.</div>
-                            </div>
-                        </div>
-                        
-                        <!-- Campo Email -->
-                        <div class="mb-4">
-                            <label for="email" class="form-label fw-bold">Email *</label>
-                            <div class="input-group">
-                                <span class="input-group-text bg-primary text-white"><i class="bi bi-envelope"></i></span>
-                                <input type="email" class="form-control py-2" id="email" name="email" placeholder="tucorreo@empresa.com" required>
-                                <div class="invalid-feedback">Ingresa un email válido.</div>
-                            </div>
-                        </div>
-                        
-                        <!-- Campo Teléfono -->
-                        <div class="mb-4">
-                            <label for="telefono" class="form-label fw-bold">WhatsApp</label>
-                            <div class="input-group">
-                                <span class="input-group-text bg-primary text-white"><i class="bi bi-whatsapp"></i></span>
-                                <input type="tel" class="form-control py-2" id="telefono" name="telefono" placeholder="+57 ">
-                            </div>
-                        </div>
-                        
-                        <!-- Selector de Servicio -->
-                        <div class="mb-4">
-                            <label for="servicio" class="form-label fw-bold">¿Qué necesitas? *</label>
-                            <select class="form-select py-2" id="servicio" name="servicio" required>
-                                <option value="" selected disabled>Selecciona un servicio</option>
-                                <option value="web">Desarrollo Web</option>
-                                <option value="app">App Móvil</option>
-                                <option value="software">Software a Medida</option>
-                                <option value="marketing">Marketing Digital</option>
-                                <option value="otros">Otros</option>
-                            </select>
-                            <div class="invalid-feedback">Selecciona una opción.</div>
-                        </div>
-                        
-                        <!-- Campo Mensaje -->
-                        <div class="mb-4">
-                            <label for="mensaje" class="form-label fw-bold">Cuéntanos más *</label>
-                            <textarea class="form-control py-2" id="mensaje" name="mensaje" rows="4" placeholder="Ej: Necesito una web para mi restaurante con menú online..." required></textarea>
-                            <div class="invalid-feedback">Describe brevemente tu proyecto.</div>
-                        </div>
-                        
-                        <!-- Checkbox GDPR -->
-                        <div class="mb-4 form-check">
-                            <input type="checkbox" class="form-check-input" id="privacidad" required>
-                            <label class="form-check-label small" for="privacidad">Acepto la <a href="#" class="text-primary">política de privacidad</a> *</label>
-                        </div>
-                        
-                        <!-- Botón de envío -->
-                        <div class="d-grid">
-                            <button type="submit" class="btn btn-primary btn-lg py-2">
-                                <i class="bi bi-send-fill me-2"></i> Enviar consulta
-                            </button>
-                        </div>
-                    </form>
-                    
-                                        <!-- Llamada alternativa -->
-<div class="text-center mt-4">
-    <p class="small mb-2">¿Prefieres hablar directamente?</p>
-    <a href="https://wa.me/573013897141" target="_blank" class="btn btn-success px-4">
-        <i class="bi bi-whatsapp me-2"></i> Chatea por WhatsApp
-    </a>
-</div>
+         <!-- ======= Sección Contacto ======= -->
+    <section id="contacto" class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center" data-aos="fade-down">
+                    <h2 class="mb-4">¿Listo para transformar tu negocio?</h2>
+                    <p class="lead mb-5">Déjanos tus datos y en <span class="text-primary fw-bold">24 horas</span> te enviaremos una propuesta personalizada <u>sin costo</u>.</p>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-6" data-aos="zoom-in">
+                    <div class="contact-card p-4 p-md-5 shadow-lg rounded-4">
+                        <!-- Mensaje de estado (oculto inicialmente) -->
+                        <div id="form-message" class="alert d-none"></div>
+                        
+                        <form id="contactForm" action="" method="POST" class="needs-validation" novalidate>
+                            <!-- Campo Nombre -->
+                            <div class="mb-4">
+                                <label for="nombre" class="form-label fw-bold">Nombre completo *</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-primary text-white"><i class="bi bi-person"></i></span>
+                                    <input type="text" class="form-control py-2" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+                                    <div class="invalid-feedback">Por favor ingresa tu nombre.</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Campo Email -->
+                            <div class="mb-4">
+                                <label for="email" class="form-label fw-bold">Email *</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-primary text-white"><i class="bi bi-envelope"></i></span>
+                                    <input type="email" class="form-control py-2" id="email" name="email" placeholder="tucorreo@empresa.com" required>
+                                    <div class="invalid-feedback">Ingresa un email válido.</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Campo Teléfono -->
+                            <div class="mb-4">
+                                <label for="telefono" class="form-label fw-bold">WhatsApp</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-primary text-white"><i class="bi bi-whatsapp"></i></span>
+                                    <input type="tel" class="form-control py-2" id="telefono" name="telefono" placeholder="+57" pattern="[0-9+]{10,15}">
+                                    <div class="invalid-feedback">Formato: +573001234567</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Selector de Servicio -->
+                            <div class="mb-4">
+                                <label for="servicio" class="form-label fw-bold">¿Qué necesitas? *</label>
+                                <select class="form-select py-2" id="servicio" name="servicio" required>
+                                    <option value="" selected disabled>Selecciona un servicio</option>
+                                    <option value="web">Desarrollo Web</option>
+                                    <option value="app">App Móvil</option>
+                                    <option value="software">Software a Medida</option>
+                                    <option value="marketing">Marketing Digital</option>
+                                    <option value="otros">Otros</option>
+                                </select>
+                                <div class="invalid-feedback">Selecciona una opción.</div>
+                            </div>
+                            
+                            <!-- Campo Mensaje -->
+                            <div class="mb-4">
+                                <label for="mensaje" class="form-label fw-bold">Cuéntanos más *</label>
+                                <textarea class="form-control py-2" id="mensaje" name="mensaje" rows="4" placeholder="Ej: Necesito una web para mi restaurante con menú online..." required></textarea>
+                                <div class="invalid-feedback">Describe brevemente tu proyecto.</div>
+                            </div>
+                            
+                            <!-- Checkbox GDPR -->
+                            <div class="mb-4 form-check">
+                                <input type="checkbox" class="form-check-input" id="privacidad" name="privacidad" required>
+                                <label class="form-check-label small" for="privacidad">Acepto la <a href="#" class="text-primary">política de privacidad</a> *</label>
+                            </div>
+                            
+                            <!-- Botón de envío -->
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg py-2" id="submitBtn">
+                                    <i class="bi bi-send-fill me-2"></i> Enviar consulta
+                                </button>
+                            </div>
+                        </form>
+                        
+                        <!-- Llamada alternativa -->
+                        <div class="text-center mt-4">
+                            <p class="small mb-2">¿Prefieres hablar directamente?</p>
+                            <a href="https://wa.me/573013897141" target="_blank" class="btn btn-success px-4" id="whatsappBtn">
+                                <i class="bi bi-whatsapp me-2"></i> Chatea por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -753,112 +755,91 @@
      <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!--<script src="./js/scripts.js"></script>-->
     <script>
-        // Inicializar AOS (Animate On Scroll)
-        AOS.init({
-            duration: 1000,
-            once: true
+        // Inicializar AOS
+        AOS.init({ duration: 1000, once: true });
+
+        // Validación en tiempo real
+        document.querySelectorAll('#contactForm [required]').forEach(campo => {
+            campo.addEventListener('input', function() {
+                const feedback = this.nextElementSibling;
+                if (this.checkValidity()) {
+                    this.classList.remove('is-invalid');
+                    feedback?.classList.add('d-none');
+                } else {
+                    this.classList.add('is-invalid');
+                    feedback?.classList.remove('d-none');
+                }
+            });
         });
-        // Validación de formulario en tiempo real
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    const form = e.target;
-    if (!form.checkValidity()) {
-        e.preventDefault();
-        e.stopPropagation();
-        form.classList.add('was-validated');
-    }
-});
 
-// Efecto hover en tarjetas de servicio
-document.querySelectorAll('.service-card').forEach(card => {
-    card.addEventListener('mouseenter', () => {
-        card.style.transform = 'translateY(-10px)';
-        card.querySelector('.service-icon i').style.transform = 'rotate(15deg)';
-    });
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = '';
-        card.querySelector('.service-icon i').style.transform = '';
-    });
-});
+        // Envío AJAX del formulario
+        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
+            const submitBtn = document.getElementById('submitBtn');
+            const originalBtnText = submitBtn.innerHTML;
+            const messageDiv = document.getElementById('form-message');
 
-// Scroll suave para enlaces
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+            if (!form.checkValidity()) {
+                form.classList.add('was-validated');
+                return;
+            }
+
+            // Deshabilitar botón durante el envío
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status"></span> Enviando...';
+
+            try {
+                const response = await fetch('contacto.php', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.text();
+                
+                if (response.ok) {
+                    // Mostrar mensaje de éxito
+                    messageDiv.className = 'alert alert-success';
+                    messageDiv.innerHTML = '✅ Mensaje enviado. ¡Te responderemos en 24 horas!';
+                    messageDiv.classList.remove('d-none');
+                    form.reset();
+                    form.classList.remove('was-validated');
+                } else {
+                    throw new Error(result || 'Error en el servidor');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                messageDiv.className = 'alert alert-danger';
+                messageDiv.innerHTML = '❌ Hubo un error al enviar. Por favor, inténtalo de nuevo.';
+                messageDiv.classList.remove('d-none');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+                // Scroll al mensaje
+                messageDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
         });
-    });
-});
 
-// Validación al enviar
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    const form = e.target;
-    if (!form.checkValidity()) {
-        e.preventDefault();
-        e.stopPropagation();
-    }
-    form.classList.add('was-validated');
-}, false);
+        // Efecto hover para WhatsApp
+        const whatsappBtn = document.getElementById('whatsappBtn');
+        whatsappBtn.addEventListener('mouseenter', () => {
+            whatsappBtn.innerHTML = '<i class="bi bi-whatsapp me-2"></i> ¡Escríbenos ahora!';
+        });
+        whatsappBtn.addEventListener('mouseleave', () => {
+            whatsappBtn.innerHTML = '<i class="bi bi-whatsapp me-2"></i> Chatea por WhatsApp';
+        });
 
-// Validación en tiempo real para campos requeridos
-const camposRequeridos = document.querySelectorAll('#contactForm [required]');
-camposRequeridos.forEach(campo => {
-    campo.addEventListener('input', function() {
-        if (this.checkValidity()) {
-            this.classList.remove('is-invalid');
-            this.classList.add('is-valid');
-        } else {
-            this.classList.remove('is-valid');
-        }
-    });
-});
-
-// Efecto hover para el botón de WhatsApp
-const whatsappBtn = document.querySelector('.btn-success');
-whatsappBtn.addEventListener('mouseenter', () => {
-    whatsappBtn.innerHTML = '<i class="bi bi-whatsapp me-2"></i> ¡Escríbenos ahora!';
-});
-whatsappBtn.addEventListener('mouseleave', () => {
-    whatsappBtn.innerHTML = '<i class="bi bi-whatsapp me-2"></i> Chatea por WhatsApp';
-});
-// Efecto de escritura dinámica para el título
-const typewriterElements = document.querySelectorAll('.typewriter');
-typewriterElements.forEach(el => {
-    const originalText = el.textContent;
-    el.textContent = '';
-    
-    let i = 0;
-    const speed = 50; // Velocidad en ms
-    
-    function typeWriter() {
-        if (i < originalText.length) {
-            el.textContent += originalText.charAt(i);
-            i++;
-            setTimeout(typeWriter, speed);
-        } else {
-            // Mantener el cursor parpadeante
-            el.style.borderRight = '3px solid #2A5BDD';
-        }
-    }
-    
-    setTimeout(typeWriter, 1000); // Delay inicial
-});
-
-
-
-// Cambiar navbar al hacer scroll
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.classList.add('navbar-scrolled');
-    } else {
-        navbar.classList.remove('navbar-scrolled');
-    }
-});
-
-
+        // Cambiar navbar al hacer scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            navbar?.classList.toggle('navbar-scrolled', window.scrollY > 50);
+        });
     </script>
+    
+    
+    
 </body>
 </html>
+
